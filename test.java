@@ -55,8 +55,8 @@ public class StatisticsController {
             if(showDetails == null){
                 showDetails = false;
             }
-            List<String> dates= DateHandler.handleParamDate(beginDate, endDate);
-            LineInfoDTO data= statisticsService.getLineCountInfo(repoUuid, branch, dates.get(0), dates.get(1), developer, showDetails);
+            List<String> date= DateHandler.handleParamDate(beginDate, endDate);
+            LineInfoDTO data= statisticsService.getLineCountInfo(repoUuid, branch, date.get(0), date.get(1), developer, showDetails);
             return new ResponseBean<>(200, "", data);
         }catch (Exception e){
             e.printStackTrace();
